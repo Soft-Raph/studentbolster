@@ -27,9 +27,9 @@
                     <input type="text" class="form-control" name="amount" value="" id="exampleInputEmail3">
                 </div>
 
-{{--@if(Helper::canInvest)--}}
+            @if(\App\Helpers\Helper::canInvest())
                 <button type="submit" id="btn-submit" class="btn btn-primary mr-2">Submit</button>
-{{--    @endif--}}
+             @endif
 
             </form>
 

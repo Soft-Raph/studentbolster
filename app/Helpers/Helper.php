@@ -30,10 +30,8 @@ class Helper
        $start_date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$trans->created_at);
        $end_date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', date("Y-m-d H:i:s"));
        $different_days = $start_date->diffInDays($end_date);
-
-       if ( $different_days >14){
+       if ( $different_days > 14){
            return true;
-
        }
        return false;
    }
