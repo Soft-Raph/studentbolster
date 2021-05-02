@@ -29,7 +29,7 @@
 
             @if(\App\Helpers\Helper::canInvest())
                 <button type="submit" id="btn-submit" class="btn btn-primary mr-2">Submit</button>
-             @endif
+                @endif
 
             </form>
 
