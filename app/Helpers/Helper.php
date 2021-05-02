@@ -26,7 +26,9 @@ class Helper
    public static function canInvest(){
 
        $trans = auth()->user()->transactions->where('type', 'Investment')->last();
-
+        if (is_null($trans)){
+            return false;
+        }
        $start_date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$trans->created_at);
        $end_date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', date("Y-m-d H:i:s"));
        $different_days = $start_date->diffInDays($end_date);
