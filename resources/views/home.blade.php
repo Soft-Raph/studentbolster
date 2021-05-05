@@ -205,6 +205,7 @@
 
 
                 <div class="col-12">
+                    @if(\App\Helpers\Helper::claimInvest())
 {{--                    <span class="mdi mdi-arrow-top-right icon-item"></span>--}}
                     <a href="{{url('/investment')}}"  class="mb-3 ml-3 btn btn-primary btn-lg"
                        style="  background: linear-gradient(to right,  #ffab00 , #ffab00,#ffab00 );
@@ -212,6 +213,15 @@
                         {{--                          <ion-icon name="cash-outline"></ion-icon>--}}
                         Invest Here
                     </a>
+
+                 @else
+                   <a href="{{url('/investment')}}"  class="mb-3 ml-3 btn btn-primary btn-lg"--}}
+                        style="  background: linear-gradient(to right,  #ffab00 , #ffab00,#ffab00 )
+ !important; border: none;font-size: large;">
+                                                <ion-icon name="cash-outline"></ion-icon>--}}
+                        Claim your Investment
+                   </a>
+                    @endif>
 
                       <h4 class="ml-4">Student Plan</h4>
 
