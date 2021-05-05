@@ -37,6 +37,23 @@ class Helper
        }
        return false;
    }
+    
+        public static function claimInvest(){
+
+        $trans = auth()->user()->transactions->where('type', 'Investment')->last();
+        if (is_null($trans)){
+            return true;
+        }
+        $start_date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$trans->created_at);
+        $end_date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', date("Y-m-d H:i:s"));
+        $different_days = $start_date->diffInDays($end_date);
+        if ( $different_days = 14){
+
+            return true;
+        }
+
+        return false;
+    }
 
 }
 
